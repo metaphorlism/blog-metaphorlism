@@ -2,7 +2,6 @@
 import { usePathname } from "next/navigation";
 import MagnifyingGlassIcon from "../assets/MagnifyingGlassIcon.svg";
 import Image from "next/image";
-import { useState } from "react";
 import Link from "next/link";
 
 const PAGE_ACTIVE_STYLE = {
@@ -16,10 +15,8 @@ function NavigationBar() {
   const router = usePathname();
   const pageName = router.split("/")[1];
 
-  console.log(PAGE_NAME.includes(pageName));
-
   return (
-    <div className="flex h-20 justify-between items-center px-5 border-b-2 border-purple-200">
+    <div className="flex h-20 justify-between items-center px-5 border-b-2 border-purple-200 sticky top-0 bg-inherit">
       <div className="h-full w-40 md:w-56 p-2">
         <img
           src="/descriptions/logo.png"
@@ -66,9 +63,9 @@ function NavigationBar() {
         <input
           type="search"
           id="search"
-          className="block w-40 md:w-56 p-2 px-4 pr-10 bg-[#7c3aed]/20 shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed]"
+          className="block w-40 md:w-56 p-2 px-4 pr-10 bg-inherit shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed]"
           placeholder="Search"
-          autoComplete="false"
+          autoComplete="off"
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
           <Image
