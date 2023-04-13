@@ -1,4 +1,4 @@
-name: Run ESLint on Pull Requests
+name: Run ESLint and Cypress on PUSH
 
 on: [push]
 
