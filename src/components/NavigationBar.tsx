@@ -18,7 +18,7 @@ function NavigationBar() {
   return (
     <div className="border-b-2 border-purple-200 sticky top-0 bg-inherit">
       <div className="flex h-20 justify-between items-center px-5 max-w-360 mx-auto">
-        <div className="p-2">
+        <div className="w-40 md:w-56 p-2">
           <Image
             src="/descriptions/logo.png"
             height={64}
