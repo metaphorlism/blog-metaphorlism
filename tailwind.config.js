@@ -7,11 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#7C3AED",
+      },
       spacing: {
         15: "60rem",
       },
       maxWidth: {
         360: "90rem",
+      },
+      gridTemplateRows: {
+        defaultLayout: "5.125rem 1fr 5.125rem",
       },
     },
   },

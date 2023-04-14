@@ -1,6 +1,4 @@
-"use client";
-import { usePathname } from "next/navigation";
-import MagnifyingGlassIcon from "../assets/MagnifyingGlassIcon.svg";
+import MagnifyingGlassIcon from "@/assets/MagnifyingGlassIcon.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,12 +7,7 @@ const PAGE_ACTIVE_STYLE = {
   inactive: "px-7 py-1 rounded-2xl outline outline-2 bg-transparent text-black",
 };
 
-const PAGE_NAME = ["blogs", "about-us"];
-
-function NavigationBar() {
-  const router = usePathname();
-  const pageName = router.split("/")[1];
-
+function NavigationBar({ activePage }: { activePage: string }) {
   return (
     <div className="border-b-2 border-purple-200 sticky top-0 bg-inherit">
       <div className="flex h-20 justify-between items-center px-5 max-w-360 mx-auto">
@@ -27,22 +20,22 @@ function NavigationBar() {
             alt="Metaphorlism logo"
           ></Image>
         </div>
-        <div className="flex gap-10 flex-1 justify-center">
+        <div className="hidden lg:flex gap-10 flex-1 justify-center">
           <Link href={"/"}>
             <button
               className={
-                PAGE_NAME.includes(pageName)
-                  ? PAGE_ACTIVE_STYLE.inactive
-                  : PAGE_ACTIVE_STYLE.active
+                activePage === "home"
+                  ? PAGE_ACTIVE_STYLE.active
+                  : PAGE_ACTIVE_STYLE.inactive
               }
             >
               Home
             </button>
           </Link>
-          <Link href={`/${PAGE_NAME[0]}`}>
+          <Link href={`/blogs`}>
             <button
               className={
-                pageName === PAGE_NAME[0]
+                activePage === "blogs"
                   ? PAGE_ACTIVE_STYLE.active
                   : PAGE_ACTIVE_STYLE.inactive
               }
@@ -50,10 +43,10 @@ function NavigationBar() {
               Blogs
             </button>
           </Link>
-          <Link href={`/${PAGE_NAME[1]}`}>
+          <Link href={`/about-us`}>
             <button
               className={
-                pageName === PAGE_NAME[1]
+                activePage === "about-us"
                   ? PAGE_ACTIVE_STYLE.active
                   : PAGE_ACTIVE_STYLE.inactive
               }

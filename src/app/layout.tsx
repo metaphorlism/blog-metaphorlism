@@ -1,5 +1,6 @@
 import NavigationBar from "@/components/NavigationBar";
 import "./globals.css";
+import DefaultLayout from "@/layouts/DefaultLayout";
 
 export const metadata = {
   title: "Metaphorlism",
@@ -13,9 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <NavigationBar />
-        {children}
+      <body className="grid grid-rows-defaultLayout lg:block">
+        <DefaultLayout>{children}</DefaultLayout>
       </body>
     </html>
   );
