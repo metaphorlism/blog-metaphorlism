@@ -1,6 +1,6 @@
-import NavigationBar from "@/components/NavigationBar";
 import "./globals.css";
-import DefaultLayout from "@/layouts/DefaultLayout";
+import NavigationBar from "@/app/NavigationBar";
+import MobileNavigationBar from "@/app/MobileNavigationBar";
 
 export const metadata = {
   title: "Metaphorlism",
@@ -15,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="grid grid-rows-defaultLayout lg:block">
-        <DefaultLayout>{children}</DefaultLayout>
+        <NavigationBar />
+        {children}
+        <MobileNavigationBar />
       </body>
     </html>
   );

@@ -1,15 +1,10 @@
+"use client";
 import Image from "next/image";
-import { Convergence } from "next/font/google";
-
-const convergence = Convergence({
-  weight: "400",
-  subsets: ["latin", "latin-ext"],
-});
-
 import HomeIcon from "@/assets/navigation/home.svg";
 import BlogsIcon from "@/assets/navigation/blogs.svg";
 import AboutUsIcon from "@/assets/navigation/about-us.svg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const ACTIVE_STYLE = {
   WebkitFilter:
@@ -18,9 +13,16 @@ const ACTIVE_STYLE = {
     "brightness(0) saturate(100%) invert(29%) sepia(47%) saturate(6060%) hue-rotate(252deg) brightness(93%) contrast(100%)",
 };
 
-function MobileNavigationBar({ activePage }: { activePage: string }) {
+const PAGE_NAME = ["blogs", "about-us"];
+
+function MobileNavigationBar() {
+  const router = usePathname();
+  const pageName = PAGE_NAME.includes(router.split("/")[1])
+    ? router.split("/")[1]
+    : "home";
+
   return (
-    <div className="flex lg:hidden sticky bottom-0 bg-inherit justify-center gap-16 sm:gap-32 rounded-t-xl border-t-2 border-primary py-1 items-center">
+    <div className="flex lg:hidden sticky bottom-0 bg-inherit justify-center gap-14 sm:gap-32 rounded-t-xl border-t-2 border-primary py-1 items-center z-50">
       <Link href="/">
         <div className="flex flex-col items-center">
           <Image
@@ -28,11 +30,11 @@ function MobileNavigationBar({ activePage }: { activePage: string }) {
             width={32}
             height={32}
             alt="Home Icon"
-            style={activePage === "home" ? ACTIVE_STYLE : {}}
+            style={pageName === "home" ? ACTIVE_STYLE : {}}
           />
           <p
-            className={`${convergence.className} text-sm sm:text-lg ${
-              activePage === "home" ? "text-primary" : null
+            className={`font-convergence text-sm sm:text-lg ${
+              pageName === "home" ? "text-primary" : null
             }`}
           >
             Home
@@ -46,11 +48,11 @@ function MobileNavigationBar({ activePage }: { activePage: string }) {
             width={32}
             height={32}
             alt="Blogs Icon"
-            style={activePage === "blogs" ? ACTIVE_STYLE : {}}
+            style={pageName === "blogs" ? ACTIVE_STYLE : {}}
           />
           <p
-            className={`${convergence.className} text-sm sm:text-lg ${
-              activePage === "blogs" ? "text-primary" : null
+            className={`font-convergence text-sm sm:text-lg ${
+              pageName === "blogs" ? "text-primary" : null
             }`}
           >
             Blogs
@@ -64,11 +66,11 @@ function MobileNavigationBar({ activePage }: { activePage: string }) {
             width={32}
             height={32}
             alt="About us Icon"
-            style={activePage === "about-us" ? ACTIVE_STYLE : {}}
+            style={pageName === "about-us" ? ACTIVE_STYLE : {}}
           />
           <p
-            className={`${convergence.className} text-sm sm:text-lg ${
-              activePage === "about-us" ? "text-primary" : null
+            className={`font-roboto text-sm sm:text-lg ${
+              pageName === "about-us" ? "text-primary" : null
             }`}
           >
             About Us

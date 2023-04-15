@@ -1,16 +1,25 @@
+"use client"
 import MagnifyingGlassIcon from "@/assets/MagnifyingGlassIcon.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const PAGE_ACTIVE_STYLE = {
   active: "bg-[#7c3aed] text-white px-7 py-1 rounded-2xl shadow",
   inactive: "px-7 py-1 rounded-2xl outline outline-2 bg-transparent text-black",
 };
 
-function NavigationBar({ activePage }: { activePage: string }) {
+const PAGE_NAME = ["blogs", "about-us"];
+
+function NavigationBar() {
+  const router = usePathname();
+  const pageName = PAGE_NAME.includes(router.split("/")[1])
+    ? router.split("/")[1]
+    : "home";
+
   return (
-    <div className="border-b-2 border-purple-200 sticky top-0 bg-inherit">
-      <div className="flex h-20 justify-between items-center px-5 max-w-360 mx-auto">
+    <div className="border-b-2 border-purple-200 sticky top-0 bg-inherit z-50">
+      <div className="flex h-20 justify-between items-center px-5 max-w-360 mx-auto ">
         <div className="w-40 md:w-56 p-2">
           <Image
             src="/descriptions/logo.png"
@@ -24,7 +33,7 @@ function NavigationBar({ activePage }: { activePage: string }) {
           <Link href={"/"}>
             <button
               className={
-                activePage === "home"
+                pageName === "home"
                   ? PAGE_ACTIVE_STYLE.active
                   : PAGE_ACTIVE_STYLE.inactive
               }
@@ -35,7 +44,7 @@ function NavigationBar({ activePage }: { activePage: string }) {
           <Link href={`/blogs`}>
             <button
               className={
-                activePage === "blogs"
+                pageName === "blogs"
                   ? PAGE_ACTIVE_STYLE.active
                   : PAGE_ACTIVE_STYLE.inactive
               }
@@ -46,7 +55,7 @@ function NavigationBar({ activePage }: { activePage: string }) {
           <Link href={`/about-us`}>
             <button
               className={
-                activePage === "about-us"
+                pageName === "about-us"
                   ? PAGE_ACTIVE_STYLE.active
                   : PAGE_ACTIVE_STYLE.inactive
               }
@@ -59,7 +68,7 @@ function NavigationBar({ activePage }: { activePage: string }) {
           <input
             type="search"
             id="search"
-            className="block w-40 md:w-56 p-2 px-4 pr-10 bg-inherit shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed]"
+            className="block w-48 md:w-56 p-2 px-4 pr-10 bg-inherit shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed]"
             placeholder="Search"
             autoComplete="off"
           />
