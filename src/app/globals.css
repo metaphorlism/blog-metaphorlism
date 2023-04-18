@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Convergence&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -21,4 +21,3 @@ body {
   background-color: var(--background-hex);
   min-height: 100vh;
 }
-
