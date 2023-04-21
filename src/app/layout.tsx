@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="grid grid-rows-defaultLayout lg:block">
+      <body className="grid grid-rows-defaultLayout lg:block scrollbar">
         <NavigationBar />
         {children}
         <MobileNavigationBar />

@@ -16,17 +16,19 @@ export default async function Page() {
   const blogs = await getBlogs({});
 
   return (
-    <main>
+    <main className="max-w-360 mx-auto">
       <div className="flex justify-between text-black w-full mx-auto mt-3 px-5">
         <div>
-          <h1 className={`font-convergence text-lg md:text-xl`}>
+          <h1 className={`font-convergence text-base lg:text-xl`}>
             All Contents
           </h1>
-          <h2 className="text-[#777777] text-sm md:text-base">Up to date</h2>
+          <h2 className="text-[#777777] text-sm lg:text-base">Up to date</h2>
         </div>
         <div>
-          <h1 className={`font-convergence text-lg md:text-xl`}>21 contents</h1>
-          <h2 className="text-[#777777] text-sm md:text-base">23-March-2023</h2>
+          <h1 className={`font-convergence text-base lg:text-xl text-end`}>
+            21 contents
+          </h1>
+          <h2 className="text-[#777777] text-sm lg:text-base">23-March-2023</h2>
         </div>
       </div>
       <div className="flex flex-wrap justify-center">

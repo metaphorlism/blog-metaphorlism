@@ -23,8 +23,12 @@ function BlogCard({ title, image, description, id }: IBlogCardProps) {
         />
       </div>
       <div className="py-2 px-5 text-black w-64 mb-auto lg:w-auto lg:mb-0">
-        <h1 className="text-sm md:text-xl font-bold">{title}</h1>
-        <p className="text-xs md:text-base text-slate-500">{description}</p>
+        <h1 className="text-base lg:text-xl font-bold h-6 lg:h-7 overflow-clip">
+          {title}
+        </h1>
+        <p className="text-sm lg:text-base text-slate-500 h-28 overflow-clip lg:h-auto">
+          {description}
+        </p>
       </div>
       <Link href={`/blogs/${id}`}>
         <div className="ml-auto bg-slate-700 lg:h-full lg:w-20 cursor-pointer grid place-items-center flex-shrink-0 w-full h-10">
