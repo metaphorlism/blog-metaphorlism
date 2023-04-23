@@ -29,7 +29,7 @@ function NavigationBar() {
             alt="Metaphorlism logo"
           ></Image>
         </div>
-        <div className="hidden lg:flex gap-10 flex-1 justify-center">
+        <div className="hidden lg:flex gap-10 flex-1 justify-center font-convergence">
           <Link href={"/"}>
             <button
               className={
@@ -68,7 +68,7 @@ function NavigationBar() {
           <input
             type="search"
             id="search"
-            className="block w-48 md:w-56 p-2 px-4 pr-10 bg-inherit shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed]"
+            className="block w-48 md:w-56 p-2 px-4 pr-10 bg-inherit shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed] font-convergence"
             placeholder="Search"
             autoComplete="off"
           />
