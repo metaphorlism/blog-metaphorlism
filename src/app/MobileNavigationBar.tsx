@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import HomeIcon from "@/assets/navigation/home.svg";
-import BlogsIcon from "@/assets/navigation/blogs.svg";
-import AboutUsIcon from "@/assets/navigation/about-us.svg";
+import HomeIcon from "@/assets/navigation/HomeIcon.svg";
+import BlogsIcon from "@/assets/navigation/BlogsIcon.svg";
+import AboutUsIcon from "@/assets/navigation/AboutUsIcon.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

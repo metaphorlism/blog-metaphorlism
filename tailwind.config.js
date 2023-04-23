@@ -17,7 +17,7 @@ module.exports = {
         360: "90rem",
       },
       gridTemplateRows: {
-        defaultLayout: "5.125rem 1fr 4.5rem",
+        defaultLayout: "5.125rem 1fr 4.5rem"
       },
       fontFamily: {
         convergence: ["Convergence", "san-serif"],
