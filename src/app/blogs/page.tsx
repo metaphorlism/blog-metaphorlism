@@ -1,5 +1,4 @@
-// "use client"
-import BlogCard from "@/app/blogs/BlogCard";
+import BlogCard from "./BlogCard";
 
 async function getBlogs({ numberLimit = 10 }): Promise<
   Array<{
