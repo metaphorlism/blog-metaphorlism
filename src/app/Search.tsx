@@ -5,8 +5,9 @@ import MagnifyingGlassIcon from "@/assets/MagnifyingGlassIcon.svg";
 
 function Search() {
   return (
-    <div className="relative">
+    <div className="relative opacity-0">
       <input
+        disabled
         type="search"
         id="search"
         className="block w-48 md:w-56 p-2 px-4 pr-10 bg-inherit shadow rounded-2xl placeholder-[#7c3aed] focus:outline focus:outline-1 focus:outline-[#7c3aed] text-[#7c3aed] font-convergence"
