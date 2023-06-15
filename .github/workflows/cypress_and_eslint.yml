@@ -29,6 +29,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run website
+        run: npm run dev
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
