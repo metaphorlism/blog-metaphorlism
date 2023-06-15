@@ -35,5 +35,5 @@ jobs:
           project: ./
           browser: electron
           build: npm run build
-          start: npm run dev
+          start: npm run start
           wait-on: "http://localhost:3000"
