@@ -1,6 +1,8 @@
 import "./globals.css";
 import NavigationBar from "@/app/NavigationBar";
 import MobileNavigationBar from "@/app/MobileNavigationBar";
+import Head from "next/head";
+import Script from "next/script";
 
 export const metadata = {
   title: "Metaphorlism",
@@ -14,13 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-      </head>
       <body className="grid grid-rows-defaultLayout lg:block scrollbar">
         <NavigationBar />
         {children}
         <MobileNavigationBar />
+        <Script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" strategy="beforeInteractive"></Script>
       </body>
     </html>
   );

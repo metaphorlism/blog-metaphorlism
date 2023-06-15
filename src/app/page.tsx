@@ -4,21 +4,12 @@ import FacebookIcon from "@/assets/FacebookIcon.svg";
 import InstagramIcon from "@/assets/InstagramIcon.svg";
 import Link from "next/link";
 import HomeBlogCard from "./HomeBlogCard";
+import Banner from "./Banner";
 
 export default function Page() {
   return (
     <main className="px-5 md:w-[48rem] md:mx-auto">
-      <div className="h-80 bg-slate-500 mt-2 rounded-xl overflow-hidden">
-        <Image
-          src={
-            "https://images.unsplash.com/photo-1682001426601-c7fdc9ea5b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-          }
-          width={1920}
-          height={1080}
-          alt="Banner"
-          className="w-full h-full"
-        ></Image>
-      </div>
+      <Banner />
       <h1 className="font-convergence text-xl my-2 uppercase">Blogs</h1>
       <div className="capitalize grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-5 place-items-center">
         {HomeBlogCard("sunt aut facere repellat")}
