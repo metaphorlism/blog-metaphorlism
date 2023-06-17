@@ -2,7 +2,7 @@ import { getBlog } from "@/config/axios";
 import Image from "next/image";
 import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";
-import Highlight from "./Highlight";
+import Script from "next/script";
 
 export default async function Page({ params }: { params: { id: number } }) {
   const { metadata, content } = await getBlog(params.id).then((text) => {
@@ -20,6 +20,9 @@ export default async function Page({ params }: { params: { id: number } }) {
 
   return (
     <>
+      <Script strategy="afterInteractive" id="highlight-code">
+        hljs.highlightAll();
+      </Script>
       <main className="relative w-[40ch] md:w-[60ch] lg:w-[80ch] mx-auto flex flex-col mt-5">
         <h1 className="text-3xl font-bold">{metadata.title}</h1>
         {metadata.thumbnail ? (
@@ -34,7 +37,6 @@ export default async function Page({ params }: { params: { id: number } }) {
         <article className="prose lg:prose-xl">
           <Markdown>{content}</Markdown>
         </article>
-        <Highlight />
       </main>
     </>
   );
